@@ -9,16 +9,19 @@ import Footer from './components/Footer'
 function App() {
   return (
     <Router>
-      <div>
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/main" element={<Main />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/footer" element={<Footer />} />
-          {/* Agrega más rutas según sea necesario */}
-        </Routes>
+        <div className="flex-grow bg-white">
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/footer" element={<Footer />} />
+            {/* Agrega más rutas según sea necesario */}
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </Router>
   )
