@@ -36,7 +36,7 @@ const Gallery = () => {
     }
 
     return (
-        <div className='w-full h-full bg-slate-900 flex justify-center py-2 overflow-hidden relative'>
+        <div className='w-full h-full bg-slate-900 flex justify-center py-2 overflow-hidden relative mt-16'>
             <div className="rounded sm:columns-2 md:columns-3 xl:columns-4 gap-2 w-11/12 box-border">
                 {data.length > 0 ? data.map((item) => (
                     <img

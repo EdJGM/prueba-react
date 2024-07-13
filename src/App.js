@@ -11,14 +11,19 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <div className="flex-grow bg-white">
+        <div className='flex-grow'>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/main" element={<Main />} />
+            <Route path="/main" element={
+              <>
+                <Main />
+                <Gallery />
+                <Contact />
+              </>
+            }
+            />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/footer" element={<Footer />} />
-            {/* Agrega más rutas según sea necesario */}
           </Routes>
         </div>
         <Footer />
