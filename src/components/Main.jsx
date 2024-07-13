@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Gallery from './Gallery'
 
 export default function Example() {
     return (
@@ -61,6 +62,8 @@ export default function Example() {
                     />
                 </div>
             </div>
+
+            <Gallery />
         </div>
     )
 }
