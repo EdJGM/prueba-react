@@ -6,18 +6,32 @@ const Gallery = () => {
     const [popup, setPopup] = useState(false)
     const [popupData, setPopupData] = useState("")
 
-    const getData = async (count) => {
+    // Arreglo de números del 20 al 32
+    const numbers = Array.from({ length: 13 }, (_, i) => i + 20)
+
+    const getData = async () => {
         try {
-            const api = await fetch(`https://picsum.photos/v2/list?limit=${count}`)
-            setData(await api.json())
+            const api = await fetch(`https://picsum.photos/v2/list?limit=100`)
+            const images = await api.json()
+
+            // Obtener las imágenes correspondientes a los números seleccionados
+            const selectedImages = numbers.map(num => images[num])
+
+            setData(selectedImages)
         } catch (error) {
             console.log(error)
         }
     }
 
     useEffect(() => {
-        getData(12)
+        getData()
     }, [])
+
+    // Generar una clase de tamaño aleatoria para cada imagen
+    const getRandomSizeClass = () => {
+        const sizes = ['h-48', 'h-64', 'h-80']
+        return sizes[Math.floor(Math.random() * sizes.length)]
+    }
 
     return (
         <div className='w-full h-full bg-slate-900 flex justify-center py-2 overflow-hidden relative'>
@@ -31,7 +45,7 @@ const Gallery = () => {
                             setPopup(true)
                         }}
                         alt="gallery"
-                        className='w-full mb-2 rounded-xl hover:scale-110 shadow-2xl hover:shadow-slate-900 transition'
+                        className={`w-full mb-2 rounded-xl hover:scale-110 shadow-2xl hover:shadow-slate-900 transition ${getRandomSizeClass()}`}
                     />
                 )) : "No images found"}
             </div>
