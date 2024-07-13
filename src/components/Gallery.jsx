@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { IoClose } from "react-icons/io5";
 
 const Gallery = () => {
@@ -9,7 +9,7 @@ const Gallery = () => {
     // Arreglo de números del 20 al 32
     const numbers = Array.from({ length: 13 }, (_, i) => i + 20)
 
-    const getData = async () => {
+    const getData = useCallback(async () => {
         try {
             const api = await fetch(`https://picsum.photos/v2/list?limit=100`)
             const images = await api.json()
@@ -21,10 +21,12 @@ const Gallery = () => {
         } catch (error) {
             console.log(error)
         }
-    }
+    }, [numbers])
+
 
     useEffect(() => {
         getData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // Generar una clase de tamaño aleatoria para cada imagen
