@@ -48,8 +48,8 @@ const Gallery = () => {
     };
 
     return (
-        <div className='w-full h-full bg-slate-900 flex flex-col items-center py-2 overflow-hidden relative mt-16'>
-            <div className="flex items-center mb-4">
+        <div className='w-full h-full bg-slate-900 flex flex-col items-center py-2 overflow-hidden relative mt-16' >
+            <div className="flex items-center mb-4" id='gallery-section'>
                 <button
                     className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
                     onClick={() => setModal(true)}
@@ -57,22 +57,22 @@ const Gallery = () => {
                     Indica el número de imágenes
                 </button>
                 {modal && (
-                    <div className="bg-white px-4 py-2 rounded shadow-lg flex items-center mr-4">
+                    <div className="bg-white px-4 py-1 rounded shadow-lg flex items-center mr-4">
                         <h2 className="text-lg mr-4">Establecer número de imágenes</h2>
                         <input
                             type="number"
                             value={imageCount}
                             onChange={handleImageCountChange}
-                            className="border p-2 mr-4"
+                            className="border px-4 py-1 mr-4"
                         />
                         <button
-                            className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+                            className="bg-blue-500 text-white px-4 py-1 rounded mr-2"
                             onClick={handleModalSubmit}
                         >
                             Confirmar
                         </button>
                         <button
-                            className="bg-red-500 text-white px-4 py-2 rounded"
+                            className="bg-red-500 text-white px-4 py-1 rounded mr-2"
                             onClick={() => setModal(false)}
                         >
                             Cancelar

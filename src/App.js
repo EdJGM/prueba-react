@@ -5,6 +5,7 @@ import Main from './components/Main'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Info from './components/Info'
 
 function App() {
   return (
@@ -16,19 +17,18 @@ function App() {
             <Route path="/" element={<>
               <Main />
               <Gallery />
-              <Contact />
             </>
             } />
             <Route path="/main" element={
               <>
                 <Main />
                 <Gallery />
-                <Contact />
               </>
             }
             />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/info" element={<Info />} />
           </Routes>
         </div>
         <Footer />

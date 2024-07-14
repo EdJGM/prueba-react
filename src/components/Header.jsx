@@ -1,12 +1,12 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react';
 
-const navigation = [
-    { name: 'Inicio', href: '/main', current: true },
-    { name: 'Galeria', href: '/gallery', current: false },
-    { name: 'Contacto', href: '/contact', current: false },
-    { name: 'Información', href: '/footer', current: false },
+const navigationItems = [
+    { name: 'Inicio', href: '/main' },
+    { name: 'Contacto', href: '/contact' },
+    { name: 'Acerca de', href: '/info' },
 ];
 
 function classNames(...classes) {
@@ -14,6 +14,17 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+    const location = useLocation();
+    const [navigation, setNavigation] = useState(navigationItems);
+
+    useEffect(() => {
+        const updatedNavigation = navigationItems.map(item => ({
+            ...item,
+            current: item.href === location.pathname
+        }));
+        setNavigation(updatedNavigation);
+    }, [location]);
+
     return (
         <Disclosure as="nav" className="bg-gray-800 fixed w-full z-50">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
