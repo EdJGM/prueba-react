@@ -13,7 +13,12 @@ function App() {
         <Header />
         <div className='flex-grow'>
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<>
+              <Main />
+              <Gallery />
+              <Contact />
+            </>
+            } />
             <Route path="/main" element={
               <>
                 <Main />
