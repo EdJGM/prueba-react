@@ -48,8 +48,8 @@ const Gallery = () => {
     };
 
     return (
-        <div className='w-full h-full bg-slate-900 flex flex-col items-center py-2 overflow-hidden relative mt-16' >
-            <div className="flex items-center mb-4" id='gallery-section'>
+        <div className='w-full h-full bg-slate-900 flex flex-col items-center py-2 overflow-hidden relative mt-16' id='gallery-section'>
+            <div className="flex items-center mb-4">
                 <button
                     className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
                     onClick={() => setModal(true)}

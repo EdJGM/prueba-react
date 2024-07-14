@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 const navigationItems = [
-    { name: 'Inicio', href: '/main' },
+    { name: 'Inicio', href: '/' },
     { name: 'Contacto', href: '/contact' },
     { name: 'Acerca de', href: '/info' },
 ];

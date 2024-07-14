@@ -51,7 +51,7 @@ export default function Info() {
                             Nuestro equipo está compuesto por personas talentosas y apasionadas que trabajan juntas para crear
                         </p>
                     </div>
-                    <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                    <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
                         {people.map((person) => (
                             <li key={person.name}>
                                 <div className="flex items-center gap-x-6">
@@ -66,7 +66,6 @@ export default function Info() {
                     </ul>
                 </div>
             </div>
-
             {/* Work with us section */}
             <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
                 <img
@@ -124,7 +123,6 @@ export default function Info() {
                     </div>
                 </div>
             </div>
-
             {/* Company stats section */}
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
