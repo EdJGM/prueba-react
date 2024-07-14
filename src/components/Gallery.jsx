@@ -19,7 +19,7 @@ const Gallery = () => {
             const images = await api.json();
 
             // Obtener las imágenes correspondientes a los números seleccionados
-            const selectedImages = numbers.map(num => images[num]);
+            const selectedImages = numbers.map(num => images[num]).filter(image => image !== undefined);
 
             setData(selectedImages);
         } catch (error) {

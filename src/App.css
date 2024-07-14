@@ -1,0 +1,7 @@
+/* Añade esto a tu archivo CSS */
+.select-hide-default-icon {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+}
